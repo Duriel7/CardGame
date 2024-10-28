@@ -148,7 +148,7 @@ public class CardValues {
         return card;
     }
     
-    
+    // toString to get card name
     public String toString() {
         
         return getCard();
