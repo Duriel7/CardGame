@@ -1,8 +1,10 @@
 package net.duriel.cardgame;
 
 /**
+ * 
  * @author Duriel
+ *
  */
-public class CardInteractions {
-    
+public class Deck {
+
 }
