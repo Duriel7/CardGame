@@ -1,9 +1,8 @@
 package net.duriel.cardgame;
 
 /**
- * @author Duriel
- * @since 0.0.1
- * @version 0.0.2
+ * <p>Description :
+ * This class is used to calculate card values depending on factions, values and power and combine those into a string to display the real name of the card.</p>
  * <p>Rules of the game :</p>
  * <p>There is factions of colors that players will use to construct armies of soldiers
  * There is a draw pile, and a discard pile where players can draw instead of taking cards from the draw pile</p>
@@ -20,14 +19,16 @@ package net.duriel.cardgame;
  * - If one card has a too low value to attack another card, it will die, and the value of the enemy will lower to its value - the value of the attacker
  * - If the value of the attacker is higher, then its value will be reduced to its original value - the value of the enemy
  * - Cards can attack in a group and another enemy group too</p>
+ * @author Duriel
+ * @since 0.0.1
+ * @version 0.0.2
  */
 public class CardValues {
     
     private int faction;        // 1 = red ; 2 = blue ; 3 = green
     private int value;          // 1 to 15 ; 1 = Ace ; 11 = Knight ; 12 = General ; 13 = Butler ; 14 = Queen ; 15 = King
-    /*private String card;        // name of card = value + faction*/
-    private boolean play;       // possibility to play or not
-    private int power;
+    private int power;			// power of the card after interactions with Figures
+    private String card;        // name of card = value + faction
 
     public CardValues () {      // default constructor to Red Ace with a power of 1
         this.faction = 1;
@@ -70,6 +71,14 @@ public class CardValues {
     public int getPower() {
     	return power;
     }
+    
+    /**
+     * <p>getter for card</p>
+     * @return the name of the card
+     */
+    public String getCard() {
+    	return card;
+    }
 
     /**
      * <p>setter for faction</p>
@@ -95,17 +104,20 @@ public class CardValues {
     	this.power = power;
     }
     
-    /*public int upCard(int value, int faction) {
-        
-        
-    }*/
+    /**
+     * <p>setter for card</p>
+     * @param power the name of the card
+     */
+    public void setCard(String card) {
+    	this.card = card;
+    }
     
     /**
      * 
      * @return the card with all the parameters in its name
      */
-    public String getCard() {
-        String card = "";
+    public String getCard(String card) {
+        card = "";
         
         // faction int determines the faction color
         if (faction == 1) {
@@ -143,7 +155,7 @@ public class CardValues {
         //for Ace power, will add a function to modify its power depending on presence of Royal Figure
         //for other cards power, will add a function to modify each card value by +1 per Figure
         power = value;
-        card += "(" + power + ")" ;
+        card += " (" + power + ")" ;
         
         return card;
     }

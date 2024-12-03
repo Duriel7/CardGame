@@ -7,5 +7,8 @@ package net.duriel.cardgame;
  *
  */
 public class Player {
+	//Class attributes
+	
+	
 
 }
