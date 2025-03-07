@@ -13,7 +13,7 @@ package net.duriel.cardgame;
  * <p>Players can construct their armies into more than one battalions of how many soldiers they want
  * Cards have the power of their respective value : 2 for 2, 3 for 3... but Ace have 1 only if no royal figures are present in the deck
  * If a King, a Queen or a Butler of the same color is present, Ace have 14, 15 or 16 power depending on the figure it is under
- * Figures, Royal (King, Queen, Butler) or Military (Knight, General), give +1 power to all cards, for a total + 5 if all are present
+ * Figures, Royal (King, Queen, Butler) or Military (Knight, General), give +1 power to all of the same cards, for a total + 5 if all are present
  * Ace are different : they gain the value of the Royal Figure they are under, but do not gain the normal +1, but they gain the +1 from other Figures</p>
  * <p>Battles are an event during which power of the cards cancel each other :
  * - If one card has a too low value to attack another card, it will die, and the value of the enemy will lower to its value - the value of the attacker
@@ -37,14 +37,15 @@ public class CardValues {
     }
     
     /**
-     * 
+     * <p>Constructor</p>
      * @param faction the color of the card
      * @param value the numeric value if the card
      * @param power the combat power of the card
      */
-    public CardValues(int faction, int value, int power) { // Constructor
+    public CardValues(int faction, int value, int power) {
         this.faction = faction;
         this.value = value;
+        power = CardInteractions.powerCalculation(power, value);
         this.power = power;
     }
 
@@ -119,7 +120,7 @@ public class CardValues {
     public String getCard(String card) {
         card = "";
         
-        // faction int determines the faction color
+        // faction integer determines the faction color
         if (faction == 1) {
             card = "Red ";
         }

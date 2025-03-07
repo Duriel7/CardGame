@@ -8,6 +8,14 @@ package net.duriel.cardgame;
  */
 public class Player {
 	//Class attributes
+	private Hand hand;
+	private String name;
+	
+	//Constructor
+	public Player(String name) {
+		hand = new Hand();
+		this.name = name;
+	}
 	
 	
 

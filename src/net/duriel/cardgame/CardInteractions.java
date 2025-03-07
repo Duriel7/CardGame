@@ -17,17 +17,19 @@ public class CardInteractions {
 	
 	private static CardValues card = new CardValues();
 	
+	//Getter
 	public int getFinalValue() {
 		return finalValue;
 	}
 	
+	//Setter
 	public void setFinalValue(int finalValue) {
 		this.finalValue = finalValue;
 	}
 	
 	public static int powerCalculation(int power, int value) {
 		if (card.getCard().contains("Ace")) {
-			
+			//check if royal figure is present in hand
 		}
 		return 0;
 	}

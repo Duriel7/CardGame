@@ -1,5 +1,7 @@
 package net.duriel.cardgame;
 
+import java.util.ArrayList;
+
 /**
  * <p>Description :
  * This class is the hand class and will be used to retain player cards in hand.
@@ -10,9 +12,17 @@ package net.duriel.cardgame;
  *
  */
 public class Hand {
+	//Attributes
+	private ArrayList cards;
 	
-	private int[] handCards;
-
+	//Default constructor
+	public Hand() {
+		cards = new ArrayList();
+	}
 	
+	//Methods
+	public void addCard(CardValues card) {
+		cards.add(card);
+	}
 
 }

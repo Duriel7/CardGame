@@ -7,7 +7,7 @@ package net.duriel.cardgame;
  */
 public class GameMasterCard {
     public static void main(String[] args) {
-        
+        Board.playGame();
     }
     
 }

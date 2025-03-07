@@ -12,9 +12,15 @@ package net.duriel.cardgame;
 public class Board {
 	//Class attributes
 	private static int playerNumber;
+	private static Player playerOne = new Player("");
+	private static Player playerTwo = new Player("");
+	private static Player playerThree = new Player("");
+	private static Player playerFour = new Player("");
 	
 	//Constructors
-	
+	public Board() {
+		
+	}
 	
 	//Setters
 	public void setPlayNumber(int playerNumber) {
@@ -32,6 +38,8 @@ public class Board {
 	}
 	
 	//Methods
-	
+	public static void playGame() {
+		
+	}
 
 }
